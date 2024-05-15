@@ -1,0 +1,66 @@
+Додавання нового клієнта в систему:
+HTTP метод: POST
+URL: https://www.example.com/customers
+
+
+Отримати дані клієнта з ідентифікатором клієнта ID 112233:
+HTTP метод: GET
+URL: https://www.example.com/customers/112233
+
+
+Створення нового продукту:
+HTTP метод: POST
+URL: https://www.example.com/products
+
+
+Для читання, оновлення, видалення продукту з ID 432111, відповідно:
+HTTP метод: GET, PUT, DELETE
+URL: https://www.example.com/products/432111
+
+
+Створення нового замовлення для клієнта поза контекстом клієнта:
+HTTP метод: POST
+URL: https://www.example.com/orders
+
+
+Створення того самого замовлення, але в контексті конкретного клієнта з ID 332244:
+HTTP метод: POST
+URL: https://www.example.com/customers/332244/orders
+
+
+Список замовлень, що належать клієнту ID 332244:
+HTTP метод: GET
+URL: https://www.example.com/customers/332244/orders
+
+
+додавання нової позиції в замовленні з ID 1234, для клієнта з ID 332244:
+HTTP метод: POST
+URL: https://www.example.com/customers/332244/orders/1234/lineorders
+
+
+Отримання списку замовлення за ID замовлення без знання ID конкретного клієнта:
+HTTP метод: GET
+URL: https://www.example.com/orders/8769
+
+
+Пагінація здійснюється через query рядок за допомогою параметра offset — це початковий номер позиції
+і параметра limit — максимальна кількість елементів, що повертаються. 
+Вони можуть називатися і по-іншому, наприклад skip, limit
+HTTP метод: GET
+URL: https://api.example.com/resources?offset=0&limit=25
+
+
+Складна фільтрація за значеннями. 
+Можна використовувати роздільник — подвійна двокрапка ::, 
+яка відокремлює ім'я властивості від значення порівняння.
+HTTP метод: GET
+URL: https://www.example.com/users?filter="name::sam|city::denver"
+
+
+Сортування. 
+Один із способів, коли для кожної властивості, здійснюється сортування в порядку зростання, 
+а для кожної властивості з префіксним тире ("-") - сортування в порядку спадання. 
+Сепаратор для кожного імені властивості — вертикальна смуга ("|").
+HTTP метод: GET
+URL: https://www.example.com/users?sort=lastName|firstName|-birthdate
+

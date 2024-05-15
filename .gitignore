@@ -1,0 +1,15 @@
+**/build/**/*
+**/env/**/*
+**/venv/**/*
+**/$VENV_PATH/**/*
+**/logs/**/*
+**/*.bin
+**/*.pkl
+**/*.db
+**/*.zip
+**/*.sqlite
+**/*.lock
+
+
+**/__pycache__/**/*
+**/.idea/**/*
